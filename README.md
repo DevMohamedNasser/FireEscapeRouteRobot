@@ -1,57 +1,80 @@
-# 🏬 Mall Exit Optimization using AI Search Algorithms
+# 🔥 Fire Escape Route Agent using AI Search Algorithms
 
 ## 📌 Project Overview
 
-This is a collaborative university project for the Artificial Intelligence course.
-The project simulates a **shopping mall environment** where multiple autonomous robots attempt to reach an **exit point** using different AI search algorithms.
+This project is a university **Artificial Intelligence** course project that simulates a **fire emergency scenario inside a mall**.
 
-Each robot is programmed with a specific search strategy.
-The algorithm that reaches the exit **faster and more efficiently** is selected as the best solution for real-world deployment.
+The system represents a **3D maze environment** where an intelligent agent acts as a **fire escape guide**.
+In case of fire, this agent helps people navigate from dangerous areas to a **safe exit gate** using classical AI search algorithms.
+
+Different search strategies are applied and visualized to analyze which algorithm provides the **most efficient escape route**, considering optimal paths and minimal visualization time under difficult conditions.
 
 ---
 
 ## 🎯 Project Objective
 
-* Apply and compare classical **AI search algorithms**
-* Analyze performance based on:
+* Implement and compare classical **AI search algorithms**
+* Simulate a realistic **fire evacuation scenario**
+* Identify the **most efficient algorithm** for guiding people safely to exits
+* Evaluate algorithms based on:
 
-  * Time to reach the exit
   * Path length
-  * Optimality
-* Determine the most efficient navigation strategy
+  * Number of discovered nodes
+  * Total movements
+  * Visualization time
 
 ---
 
 ## 🤖 Scenario Description
 
-* The mall is represented as a **2D grid map**
-* Obstacles represent walls, shops, or blocked paths
-* All robots start from the same position
-* Each robot runs **one search algorithm at a time**
-* The robot that reaches the **exit point first** is considered the optimal solution
+* The environment is represented as a **3D grid-based maze**
+* The maze simulates a **mall under emergency conditions**
+* Walls represent blocked paths, shops, or unsafe areas
+* The agent starts from a predefined location
+* The goal is a **safe exit gate**
+* Each experiment runs **one algorithm at a time**
+* The simulation visualizes:
 
-> ⚠ To ensure fair comparison, only **one agent is executed per run** (no collisions).
+  * Exploration phase
+  * Final escape path
+* This setup allows observing how different algorithms behave under **hard and constrained conditions**
 
 ---
 
 ## 🧠 Implemented Search Algorithms
 
-| Algorithm                        | Description                                     |
-| -------------------------------- | ----------------------------------------------- |
-| Breadth First Search (BFS)       | Finds shortest path in unweighted graphs        |
-| Depth First Search (DFS)         | Explores depth-first paths                      |
-| Iterative Deepening Search (IDS) | Combines DFS depth limits with BFS completeness |
-| Uniform Cost Search (UCS)        | Finds the lowest cumulative cost path           |
-| A* Search                        | Uses heuristic to optimize search               |
-| Hill Climbing                    | Greedy local optimization search                |
+| Algorithm                            | Description                                                                                                                          |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Breadth First Search (BFS)**       | Tries to reach the goal by exploring all neighboring nodes level by level, guaranteeing the shortest path in unweighted environments |
+| **Depth First Search (DFS)**         | Explores one path deeply before backtracking                                                                                         |
+| **Iterative Deepening Search (IDS)** | Combines DFS depth limits with BFS completeness                                                                                      |
+| **Uniform Cost Search (UCS)**        | Expands the node with the lowest cumulative cost                                                                                     |
+| **A* Search**                        | Uses both path cost and a heuristic function to efficiently reach the goal                                                           |
+| **Hill Climbing**                    | A greedy approach that selects the neighbor closest to the goal                                                                      |
 
 ---
 
 ## 🛠 Technologies Used
 
 * **Python 3**
+* **PyOpenGL** (OpenGL, GLU, GLUT)
+* 3D Maze visualization
 * Standard Python libraries
-* Terminal-based simulation
+
+---
+
+## 📁 Project Structure
+
+```
+Project_code/
+│
+├── main.py          # Main entry point & OpenGL visualization
+├── maze.py          # 3D maze, agent, and environment logic
+├── search_algo.py   # AI search algorithms implementations
+│
+└── Team Contributions/
+    └── team_members.txt
+```
 
 ---
 
@@ -60,104 +83,56 @@ The algorithm that reaches the exit **faster and more efficiently** is selected 
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/DevMohamedNasser/FireEscapeRouteRobot
-cd ./Project
+git clone https://github.com/DevMohamedNasser/FireEscapeRouteAgent
+cd Project_code
 ```
 
 ### 2️⃣ Install required libraries
 
-pip3 install numpy matplotlib PyOpenGL PyOpenGL_accelerate
-> Make sure Python 3 is installed on your system.
+```bash
+pip install PyOpenGL PyOpenGL_accelerate
+```
+
+> Make sure **Python 3** is installed.
 
 ### 3️⃣ Run the program
 
-python3 main.py <algorithm>
+```bash
+python main.py
+```
 
-Replace <algorithm> with one of the following options:
-| Algorithm Name             | Example Command             |
-| -------------------------- | --------------------------- |
-| Breadth First Search       | `python3 main.py bfs`       |
-| Depth First Search         | `python3 main.py dfs`       |
-| Iterative Deepening Search | `python3 main.py ids`       |
-| Uniform Cost Search        | `python3 main.py ucs`       |
-| A* Search                  | `python3 main.py astar`     |
-| Hill Climbing              | `python3 main.py hillclimb` |
+You will be prompted to choose an algorithm:
 
-> ⚠ Note: Depending on your system configuration, you might need to run the commands with `python` or `python3`.  
-> Example: `python main.py bfs` or `python3 main.py bfs`
-
-
----
-
-## 👥 Team Members & Responsibilities
-
-### 🔹 A* Search
-
-* Mohamed Refat Mustafa Abd-Elmajid Nasser
-* **ID:** 2023176
-
----
-
-### 🔹 Iterative Deepening Search (IDS)
-
-* Mohamed Khaled El-Daheesh Ahmed
-* **ID:** 2023174
-
----
-
-### 🔹 Breadth First Search (BFS)
-
-* Mohamed Elsayed Mohamed Ahmed Aboelsoud
-* **ID:** 2023168
-
----
-
-### 🔹 Project Management
-
-* Maram Hazem Fouad Ismail Ahmed
-*  **ID:** 2023202
-
----
-
-### 🔹 Hill Climbing Search
-
-* Menna Ahmed Ibrahim Agamy
-*  **ID:** 2023222
-
----
-
-### 🔹 Uniform Cost Search (UCS)
-
-* Heba Ahmed Ibrahim Agamy
-*  **ID:** 2023244
-
----
-
-### 🔹 Depth First Search (DFS)
-
-* Wessam Mohamed El-Sayed Al-Hanafy
-* **ID:** 2023249
+| Command   | Algorithm                                 |
+| --------- | ----------------------------------------- |
+| `bfs`     | Breadth First Search                      |
+| `dfs`     | Depth First Search                        |
+| `ucs`     | Uniform Cost Search                       |
+| `astar`   | A* Search                                 |
+| `ids`     | Iterative Deepening Search                |
+| `hill`    | Hill Climbing                             |
+| `compare` | Compare all algorithms (no visualization) |
 
 ---
 
 ## 📊 Evaluation Criteria
 
 * Path length
-* Execution time
-* Search optimality
-* Algorithm efficiency
+* Number of discovered nodes
+* Total movements
+* Visualization time
+* Algorithm efficiency in emergency conditions
 
 ---
 
-## 🚀 Future Enhancements
+## 👥 Team Members
 
-* Visual simulation using Pygame
-* Dynamic obstacles
-* Multi-agent environment
-* Performance comparison charts
+*(Sorted alphabetically)*
 
----
-
-## 📜 License
-
-This project is developed for educational purposes only.
+* Heba Ahmed Ibrahim Agamy
+* Maram Hazem Fouad Ismail Ahmed
+* Menna Ahmed Ibrahim Agamy
+* Mohamed Elsayed Mohamed Ahmed Aboelsoud
+* Mohamed Khaled El-Daheesh Ahmed
+* Mohamed Refat Mustafa Abd-Elmajid Nasser
+* Wessam Mohamed El-Sayed Al-Hanafy
