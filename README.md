@@ -71,11 +71,11 @@
 Based on **path optimality, exploration efficiency, and suitability for emergency evacuation**, the algorithms are ranked as follows:
 
 1. **A*** – Optimal path with heuristic guidance
-2. **Uniform Cost Search (UCS)** – Optimal but slower than A*
-3. **Breadth First Search (BFS)** – Optimal path with high exploration cost
+2. **Uniform Cost Search (UCS)** – Optimal but impractical for real-time fire escape scenarios
+3. **Breadth First Search (BFS)** – Optimal path but inefficient for fire escape scenarios
 4. **Iterative Deepening Search (IDS)** – Complete but inefficient in large environments
 5. **Depth First Search (DFS)** – Fast but non-optimal
-6. **Hill Climbing** – Fastest but unreliable and incomplete
+6. **Hill Climbing** – Incomplete
 
 ---
 
