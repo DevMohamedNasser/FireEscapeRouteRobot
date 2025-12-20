@@ -9,7 +9,7 @@
 ## 🎯 Project Objective
 
 * Implement and compare classical **AI search algorithms**
-* Simulate a realistic **fire evacuation scenario**
+* Simulate a realistic **evacuation scenario**
 * Identify the **most efficient algorithm** for guiding people safely to exits
 * Evaluate algorithms based on efficiency and optimality
 
